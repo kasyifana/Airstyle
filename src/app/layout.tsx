@@ -5,6 +5,9 @@ import { Toaster } from "@/components/ui/toaster"
 export const metadata: Metadata = {
   title: 'Airstyle - AI-Powered Hairstyle Recommendations',
   description: 'Discover your next look. Airstyle uses AI to find the perfect hairstyle, products, and salons for you.',
+  icons: {
+    icon: '/tab.png',
+  },
 };
 
 export default function RootLayout({
