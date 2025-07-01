@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Image from 'next/image';
 import { Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -13,9 +12,9 @@ export default function Footer() {
           </div>
           <div className="flex items-center space-x-2">
             <Button variant="ghost" size="icon" asChild>
-              <Link href="#" aria-label="Instagram">
+              <a href="https://www.instagram.com/airstyle.co" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                 <Instagram className="h-5 w-5" />
-              </Link>
+              </a>
             </Button>
           </div>
         </div>

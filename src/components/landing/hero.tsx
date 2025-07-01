@@ -25,7 +25,7 @@ export default function Hero() {
         </div>
         <div className="hidden lg:block">
             <Image
-                src="https://placehold.co/600x600.png"
+                src="/Model.png"
                 alt="AI Hairstyle model"
                 width={600}
                 height={600}
