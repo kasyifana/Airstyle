@@ -1,8 +1,10 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import { Button } from '@/components/ui/button';
 import Section from '@/components/landing/section';
-import Lottie from 'lottie-react';
+
+const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 
 export default function Hero() {
   return (
