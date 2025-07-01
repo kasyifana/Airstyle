@@ -87,7 +87,7 @@ export default function HairstyleRecommender() {
 
   return (
     <Card className="mt-6">
-      <CardHeader>
+      <CardHeader className="text-center">
         <CardTitle>AI Hairstyle Advisor</CardTitle>
         <CardDescription>
           Upload your photo and let our AI suggest the most flattering hairstyles for you.
