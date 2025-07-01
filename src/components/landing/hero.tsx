@@ -22,10 +22,10 @@ export default function Hero() {
         </div>
         <div className="hidden lg:block">
             <Image 
-                src="https://placehold.co/600x400.png"
+                src="https://placehold.co/600x600.png"
                 alt="AI Hairstyle model"
                 width={600}
-                height={400}
+                height={600}
                 className="rounded-lg shadow-xl"
                 data-ai-hint="hairstyle model"
             />
