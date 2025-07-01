@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <Section className="!pt-20 md:!pt-28 lg:!pt-32">
       <div className="container grid lg:grid-cols-2 gap-12 items-center">
-        <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
+        <div className="flex flex-col items-center text-center">
           <h1 className="text-4xl font-extrabold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl font-headline">
             Find Your Perfect Hairstyle with AI
           </h1>
