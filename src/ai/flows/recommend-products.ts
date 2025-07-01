@@ -48,18 +48,22 @@ const prompt = ai.definePrompt({
   name: 'recommendProductsPrompt',
   input: {schema: RecommendProductsInputSchema},
   output: {schema: RecommendProductsOutputSchema},
-  prompt: `You are a hair care expert. Recommend hair care products based on the user's hair type, scalp condition, and preferences. Also, warn the user of any potentially harmful ingredients in the products.
+  prompt: `You are a hair care product recommendation engine.
+Based on the following user input, generate a list of suitable hair care products.
 
-  Hair Type: {{{hairType}}}
-  Scalp Condition: {{{scalpCondition}}}
-  Preferences: {{{preferences}}}
+User Input:
+- Hair Type: {{{hairType}}}
+- Scalp Condition: {{{scalpCondition}}}
+{{#if preferences}}
+- Preferences: {{{preferences}}}
+{{/if}}
 
-  Return a JSON object with a single key "recommendedProducts". The value of "recommendedProducts" should be an array of product objects. Each product object must contain:
-- name (string)
-- brand (string)
-- description (string)
-- potentiallyHarmfulIngredients (an array of strings, or omit if none)
-- purchaseLink (a valid URL string, or omit if not available). The purchase link should be from a reputable website that sells the mentioned products.
+Your response MUST be a valid JSON object that adheres to the provided output schema.
+Do not include any introductory text, explanations, or markdown formatting.
+The entire response must be only the JSON object.
+
+If you cannot find a suitable purchase link for a product, omit the "purchaseLink" field.
+If a product has no potentially harmful ingredients to list, omit the "potentiallyHarmfulIngredients" field.
 `,
 });
 
