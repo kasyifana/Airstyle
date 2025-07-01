@@ -1,12 +1,14 @@
-import Image from 'next/image';
+'use client';
+
 import { Button } from '@/components/ui/button';
 import Section from '@/components/landing/section';
+import Lottie from 'lottie-react';
 
 export default function Hero() {
   return (
     <Section className="!pt-20 md:!pt-28 lg:!pt-32">
       <div className="container grid lg:grid-cols-2 gap-12 items-center">
-        <div className="flex flex-col items-center text-center">
+        <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
           <h1 className="text-4xl font-extrabold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl font-headline">
             Find Your Perfect Hairstyle with AI
           </h1>
@@ -18,15 +20,12 @@ export default function Hero() {
             <Button size="lg" variant="outline">Learn More</Button>
           </div>
         </div>
-        <div className="relative aspect-square rounded-2xl overflow-hidden shadow-2xl shadow-primary/20">
-          <Image
-            src="https://placehold.co/800x800.png"
-            alt="Woman with stylish hair"
-            data-ai-hint="woman stylish hair"
-            fill
-            className="object-cover"
-            priority
-          />
+        <div className="relative aspect-square">
+           <Lottie 
+                path="https://lottie.host/3392425d-8a1d-4456-bb51-b2d21a814ade/P4buuPd8uo.json"
+                loop={true}
+                className="w-full h-full"
+           />
         </div>
       </div>
     </Section>
