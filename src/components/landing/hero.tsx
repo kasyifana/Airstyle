@@ -1,8 +1,8 @@
 'use client';
 
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Section from '@/components/landing/section';
+import Lottie from 'lottie-react';
 
 export default function Hero() {
   return (
@@ -21,14 +21,10 @@ export default function Hero() {
           </div>
         </div>
         <div className="relative aspect-square">
-           <Image
-              src="https://placehold.co/600x600.png"
-              alt="AI hairstyle demonstration"
-              layout="fill"
-              objectFit="cover"
-              className="rounded-lg"
-              data-ai-hint="woman hair"
-            />
+          <Lottie
+            path="https://lottie.host/6477b3ba-fe33-427c-9e14-82ada545266f/JTz1vPHFkg.lottie"
+            className="w-full h-full"
+          />
         </div>
       </div>
     </Section>
