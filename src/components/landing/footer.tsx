@@ -8,9 +8,8 @@ export default function Footer() {
     <footer className="bg-muted/30">
       <div className="container py-12">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="flex items-center space-x-2">
-            <Image src="/logo.png" alt="Airstyle Logo" width={32} height={32} className="h-8 w-8" />
-            <span className="text-xl font-bold">Airstyle</span>
+          <div className="flex items-center">
+            <Image src="/logo.png" alt="Airstyle Logo" width={128} height={32} className="h-8 w-auto" />
           </div>
           <div className="flex items-center space-x-2">
             <Button variant="ghost" size="icon" asChild>
