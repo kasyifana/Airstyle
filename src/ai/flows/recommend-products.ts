@@ -29,7 +29,7 @@ const RecommendProductsOutputSchema = z.object({
       name: z.string().describe('The name of the product.'),
       brand: z.string().describe('The brand of the product.'),
       description: z.string().describe('A short description of the product.'),
-      purchaseLink: z.string().url().optional().describe('An optional link to purchase the product.'),
+      purchaseLink: z.string().optional().describe('An optional link to purchase the product.'),
       potentiallyHarmfulIngredients: z
         .array(z.string())
         .optional()
