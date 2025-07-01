@@ -3,8 +3,25 @@
 import { Button } from '@/components/ui/button';
 import Section from '@/components/landing/section';
 import Lottie from 'lottie-react';
+import { useEffect, useState } from 'react';
 
 export default function Hero() {
+  const [animationData, setAnimationData] = useState(null);
+
+  useEffect(() => {
+    fetch('https://lottie.host/6477b3ba-fe33-427c-9e14-82ada545266f/JTz1vPHFkg.lottie')
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+        return res.json();
+      })
+      .then((data) => setAnimationData(data))
+      .catch((error) => {
+        console.error("Failed to fetch Lottie animation:", error);
+      });
+  }, []);
+
   return (
     <Section className="!pt-20 md:!pt-28 lg:!pt-32">
       <div className="container grid lg:grid-cols-2 gap-12 items-center">
@@ -21,10 +38,9 @@ export default function Hero() {
           </div>
         </div>
         <div className="relative aspect-square">
-          <Lottie
-            path="https://lottie.host/6477b3ba-fe33-427c-9e14-82ada545266f/JTz1vPHFkg.lottie"
-            className="w-full h-full"
-          />
+          {animationData ? (
+             <Lottie animationData={animationData} className="w-full h-full" />
+          ): <div className="w-full h-full bg-muted rounded-lg" />}
         </div>
       </div>
     </Section>
