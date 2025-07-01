@@ -14,7 +14,7 @@ export default function Hero() {
             Find Your Perfect Hairstyle with AI
           </h1>
           <p className="mt-4 max-w-xl text-lg text-foreground/80">
-            Stop guessing. Airstyle analyzes your hair and face to give you personalized recommendations for styles, products, and salons. Your next great look is just a tap away.
+            <strong>Stop guessing.</strong> Airstyle analyzes your hair and face to give you personalized recommendations for styles, products, and salons. Your next great look is just a tap away.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
             <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground" asChild>
