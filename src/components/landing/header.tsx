@@ -31,7 +31,7 @@ export default function Header() {
       <div className="container flex h-14 max-w-screen-2xl items-center">
         <div className="mr-4 hidden md:flex">
           <Link href="/" className="mr-6 flex items-center">
-            <Image src="/logo.png" alt="Airstyle Logo" width={160} height={40} className="h-10 w-auto app-logo" />
+            <Image src="/logo.png" alt="Airstyle Logo" width={192} height={48} className="h-12 w-auto app-logo" />
           </Link>
           <nav className="flex items-center gap-6 text-sm">
             {navLinks.map((link) => (
@@ -58,7 +58,7 @@ export default function Header() {
               </SheetTrigger>
               <SheetContent side="left" className="pr-0">
                 <Link href="/" className="flex items-center mb-6" onClick={() => setOpen(false)}>
-                  <Image src="/logo.png" alt="Airstyle Logo" width={160} height={40} className="h-10 w-auto app-logo" />
+                  <Image src="/logo.png" alt="Airstyle Logo" width={192} height={48} className="h-12 w-auto app-logo" />
                 </Link>
                 <div className="flex flex-col space-y-3">
                   {navLinks.map((link) => (
@@ -70,7 +70,7 @@ export default function Header() {
               </SheetContent>
             </Sheet>
             <Link href="/" className="flex items-center md:hidden">
-               <Image src="/logo.png" alt="Airstyle Logo" width={160} height={40} className="h-10 w-auto app-logo" />
+               <Image src="/logo.png" alt="Airstyle Logo" width={192} height={48} className="h-12 w-auto app-logo" />
             </Link>
           </div>
           <nav className="hidden md:flex">
