@@ -29,7 +29,7 @@ const RecommendProductsOutputSchema = z.object({
       name: z.string().describe('The name of the product.'),
       brand: z.string().describe('The brand of the product.'),
       description: z.string().describe('A short description of the product.'),
-      purchaseLink: z.string().url().describe('A link to purchase the product.'),
+      purchaseLink: z.string().url().optional().describe('An optional link to purchase the product.'),
       potentiallyHarmfulIngredients: z
         .array(z.string())
         .describe('A list of potentially harmful ingredients in the product.'),
@@ -54,7 +54,7 @@ const prompt = ai.definePrompt({
   Preferences: {{{preferences}}}
 
   Return a JSON array of products with name, brand, description, purchaseLink, and potentiallyHarmfulIngredients fields.
-  The purchase link should be from a reputable website that sells the mentioned products.
+  If a purchase link is not available, you can omit the purchaseLink field. The purchase link should be from a reputable website that sells the mentioned products.
 `,
 });
 

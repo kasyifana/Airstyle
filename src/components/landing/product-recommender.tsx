@@ -152,11 +152,13 @@ export default function ProductRecommender() {
                         Contains: {product.potentiallyHarmfulIngredients.join(', ')}
                       </div>
                     )}
-                    <Button variant="link" asChild className="p-0 h-auto">
-                        <a href={product.purchaseLink} target="_blank" rel="noopener noreferrer">
-                            Buy Now <LinkIcon className="w-4 h-4 ml-1" />
-                        </a>
-                    </Button>
+                    {product.purchaseLink && (
+                      <Button variant="link" asChild className="p-0 h-auto">
+                          <a href={product.purchaseLink} target="_blank" rel="noopener noreferrer">
+                              Buy Now <LinkIcon className="w-4 h-4 ml-1" />
+                          </a>
+                      </Button>
+                    )}
                   </div>
                 ))}
               </div>
