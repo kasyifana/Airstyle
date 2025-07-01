@@ -2,11 +2,20 @@
 
 import * as React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Menu } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { AirstyleLogo } from '@/components/icons';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog';
 
 const navLinks = [
   { name: 'Features', href: '#features' },
@@ -69,7 +78,41 @@ export default function Header() {
             </Link>
           </div>
           <nav className="hidden md:flex">
-            <Button>Get Started</Button>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button>Get Started</Button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-[425px]">
+                <DialogHeader>
+                  <DialogTitle>Get The Airstyle App</DialogTitle>
+                  <DialogDescription>
+                    Download our app from the App Store or Google Play to get started with your hair transformation journey.
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="flex flex-col items-center gap-4 py-4">
+                  <a href="#" className="w-48">
+                    <Image
+                      src="https://placehold.co/180x60.png"
+                      alt="Download on the App Store"
+                      width={180}
+                      height={60}
+                      data-ai-hint="app store badge"
+                      className="w-full h-auto"
+                    />
+                  </a>
+                  <a href="#" className="w-48">
+                    <Image
+                      src="https://placehold.co/180x60.png"
+                      alt="Get it on Google Play"
+                      width={180}
+                      height={60}
+                      data-ai-hint="google play badge"
+                      className="w-full h-auto"
+                    />
+                  </a>
+                </div>
+              </DialogContent>
+            </Dialog>
           </nav>
         </div>
       </div>
