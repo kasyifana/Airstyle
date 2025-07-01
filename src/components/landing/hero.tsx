@@ -1,12 +1,24 @@
 'use client';
 
 import dynamic from 'next/dynamic';
+import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import Section from '@/components/landing/section';
+import { Skeleton } from '@/components/ui/skeleton';
 
 const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 
 export default function Hero() {
+  const [animationData, setAnimationData] = React.useState(null);
+
+  React.useEffect(() => {
+    fetch('https://lottie.host/3392425d-8a1d-4456-bb51-b2d21a814ade/P4buuPd8uo.json')
+      .then((response) => response.json())
+      .then((data) => setAnimationData(data))
+      .catch(error => console.error('Error fetching Lottie animation:', error));
+  }, []);
+
+
   return (
     <Section className="!pt-20 md:!pt-28 lg:!pt-32">
       <div className="container grid lg:grid-cols-2 gap-12 items-center">
@@ -23,11 +35,15 @@ export default function Hero() {
           </div>
         </div>
         <div className="relative aspect-square">
-           <Lottie 
-                path="https://lottie.host/3392425d-8a1d-4456-bb51-b2d21a814ade/P4buuPd8uo.json"
-                loop={true}
-                className="w-full h-full"
-           />
+           {animationData ? (
+             <Lottie 
+                  animationData={animationData}
+                  loop={true}
+                  className="w-full h-full"
+             />
+           ) : (
+             <Skeleton className="w-full h-full rounded-lg" />
+           )}
         </div>
       </div>
     </Section>
