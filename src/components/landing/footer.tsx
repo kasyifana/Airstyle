@@ -1,6 +1,6 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Instagram } from 'lucide-react';
-import { AirstyleLogo } from '@/components/icons';
 import { Button } from '@/components/ui/button';
 
 export default function Footer() {
@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="container py-12">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex items-center space-x-2">
-            <AirstyleLogo className="h-8 w-8 text-primary" />
+            <Image src="/logo.png" alt="Airstyle Logo" width={32} height={32} className="h-8 w-8" />
             <span className="text-xl font-bold">Airstyle</span>
           </div>
           <div className="flex items-center space-x-2">
