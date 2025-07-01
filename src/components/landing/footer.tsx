@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Twitter, Github, Instagram } from 'lucide-react';
+import { Instagram } from 'lucide-react';
 import { AirstyleLogo } from '@/components/icons';
 import { Button } from '@/components/ui/button';
 
@@ -13,16 +13,6 @@ export default function Footer() {
             <span className="text-xl font-bold">Airstyle</span>
           </div>
           <div className="flex items-center space-x-2">
-            <Button variant="ghost" size="icon" asChild>
-              <Link href="#" aria-label="Twitter">
-                <Twitter className="h-5 w-5" />
-              </Link>
-            </Button>
-            <Button variant="ghost" size="icon" asChild>
-              <Link href="#" aria-label="GitHub">
-                <Github className="h-5 w-5" />
-              </Link>
-            </Button>
             <Button variant="ghost" size="icon" asChild>
               <Link href="#" aria-label="Instagram">
                 <Instagram className="h-5 w-5" />
